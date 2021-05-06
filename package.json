@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/masterfabela/openlayers-example#readme",
   "dependencies": {
+    "map": "^1.0.1",
     "ol": "^6.5.0"
   },
   "devDependencies": {

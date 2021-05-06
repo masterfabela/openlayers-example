@@ -1,17 +1,12 @@
-import 'ol/ol.css';
-import { Map, Tile, View } from 'ol';
-import TileLayer from 'ol/layer/Tile';
-import OSM from 'ol/source/OSM';
+import { changeSource, getMap } from './map';
+import { XYZ } from 'ol/source';
 
-const map = new Map({
-  target: 'map',
-  layers: [
-    new TileLayer({
-      source: new OSM(),
-    }),
-  ],
-  view: new View({
-    center: [0, 0],
-    zoom: 0,
-  }),
-});
+getMap();
+
+document.getElementById('changeSource').onclick = () => {
+  changeSource(
+    new XYZ({
+      url: 'http://tile.stamen.com/terrain/{z}/{x}/{y}.jpg',
+    })
+  );
+};
