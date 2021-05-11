@@ -40,13 +40,6 @@ export const getMap = () => {
  * @param {TileSource} newSource
  */
 export const changeSource = (newSource) => {
-  //console.log(getMap().getLayers().getArray()[0]);
   let layer = getMap().getLayers().getArray()[0];
-  layer.getMap().removeLayer(getMap().getLayers().getArray()[0]);
-  //console.log(getMap().getLayers());
-  getMap().addLayer(
-    new TileLayer({
-      source: newSource,
-    })
-  );
+  layer.setSource(newSource);
 };
